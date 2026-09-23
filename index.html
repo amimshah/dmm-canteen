@@ -235,6 +235,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   max-width:1240px;
   margin:0 auto;
   background:#050F0E;
+  transition:opacity .4s ease;
 }
 
 /* ── MENTOR CARD ──────────────────────── */
@@ -803,9 +804,13 @@ function fetchLiveCounts() {
 
 async function loadLiveCounts() {
   document.getElementById('urgencyText').textContent = 'Loading availability…';
+  document.getElementById('mentorGrid').style.opacity = '0';
+  document.getElementById('mentorGrid').style.pointerEvents = 'none';
   const data = await fetchLiveCounts();
   if(data && data.status === 'success') applyLiveCounts(data);
   renderGrid();
+  document.getElementById('mentorGrid').style.opacity = '1';
+  document.getElementById('mentorGrid').style.pointerEvents = '';
 }
 
 const AVATAR_COLORS = [
