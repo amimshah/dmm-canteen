@@ -953,9 +953,10 @@ function clearFields(){
 // ── REGISTRATION SUBMIT ───────────────────────────────────────────
  
 async function sendToWeb3Forms(payload) {
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzvjjQs7CdoCOsAeA_3rPTubzKJBEM4CAan8Mg89ZNjeCuFTs1FRz4mv5AIWqD98w/exec';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwzv7KqxvfRp8M_z2cjsTkw-FBxrACJXqTF9jjQK67jOcOEf039CWqouAkZ8N9x_vU/exec';
   const res = await fetch(APPS_SCRIPT_URL, {
     method: 'POST',
+    mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       type:             payload.type,
@@ -967,8 +968,8 @@ async function sendToWeb3Forms(payload) {
       waitlistPosition: payload.waitlistPosition || ''
     })
   });
-  const json = await res.json();
-  return { success: json.status === 'success', message: json.message || '' };
+  // no-cors returns opaque response — assume success if no network error
+  return { success: true, message: '' };
 }
 // ─────────────────────────────────────────────────────────────────
  
