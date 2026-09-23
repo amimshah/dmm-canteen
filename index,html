@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Canteen — Dil Maange More 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#0A2E2B;
+  --teal:#1A5C56;
+  --teal-mid:#2E7A73;
+  --gold:#C9A24A;
+  --gold-light:#E8C97A;
+  --gold-dim:rgba(201,162,74,0.15);
+  --cream:#F5F0E8;
+  --off-white:#FDFBF7;
+  --text-dark:#0A1F1E;
+  --text-mid:#2D4A47;
+  --text-light:#6B8C88;
+  --white:#ffffff;
+  --danger:#B03A2E;
+  --chair-empty:rgba(201,162,74,0.18);
+  --chair-taken:#C9A24A;
+  --chair-stroke:rgba(201,162,74,0.5);
+}
+ 
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-height:100vh;overflow-x:hidden}
+ 
+/* ── HERO ─────────────────────────────── */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 24px 60px;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 30%, #0D3B38 0%, #050F0E 70%);
+}
+.hero-glow{
+  position:absolute;
+  width:600px;height:600px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(201,162,74,0.08) 0%, transparent 70%);
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  animation:pulse 4s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6}50%{transform:translate(-50%,-50%) scale(1.15);opacity:1}}
+ 
+.hero-grain{
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity:.4;pointer-events:none;
+}
+ 
+.hero-content{position:relative;z-index:2}
+ 
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  margin-bottom:28px;
+}
+.hero-eyebrow-line{width:40px;height:1px;background:var(--gold);opacity:.5}
+.hero-eyebrow-text{
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);font-weight:500;
+}
+ 
+.hero-logo-area{margin-bottom:20px}
+.hero-zandra{
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(255,255,255,.4);font-weight:300;margin-bottom:4px;
+}
+ 
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(56px,11vw,120px);
+  font-weight:300;
+  line-height:.9;
+  letter-spacing:-1px;
+  margin-bottom:8px;
+}
+.hero-title-dmm{color:var(--white)}
+.hero-title-year{color:var(--gold)}
+ 
+.hero-presents{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(18px,3vw,28px);
+  font-weight:300;
+  font-style:italic;
+  color:rgba(255,255,255,.55);
+  letter-spacing:1px;
+  margin-bottom:6px;
+}
+ 
+.hero-session{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,6vw,72px);
+  font-weight:600;
+  color:var(--white);
+  line-height:1;
+  margin-bottom:28px;
+  position:relative;
+  display:inline-block;
+}
+.hero-session::after{
+  content:'';
+  position:absolute;
+  bottom:-8px;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+ 
+.hero-tagline{
+  max-width:500px;
+  margin:28px auto 36px;
+  font-size:15px;
+  color:rgba(255,255,255,.6);
+  line-height:1.8;
+  font-weight:300;
+}
+.hero-tagline em{color:var(--gold-light);font-style:normal;font-weight:400}
+ 
+.hero-meta{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:2px;
+  margin-bottom:40px;
+}
+.hero-meta-item{
+  padding:14px 22px;
+  border:1px solid rgba(201,162,74,.2);
+  background:rgba(201,162,74,.04);
+}
+.hero-meta-item:first-child{border-radius:8px 0 0 8px}
+.hero-meta-item:last-child{border-radius:0 8px 8px 0}
+.hero-meta-label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:4px}
+.hero-meta-value{font-size:13px;color:var(--white);font-weight:300;line-height:1.3}
+ 
+.hero-cta{
+  display:inline-block;
+  padding:14px 40px;
+  background:var(--gold);
+  color:var(--forest);
+  font-family:'Inter',sans-serif;
+  font-size:12px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;
+  border-radius:4px;
+  cursor:pointer;
+  border:none;
+  transition:background .2s, transform .15s;
+}
+.hero-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+ 
+.hero-scroll{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  opacity:.4;animation:bob 2s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(5px)}}
+.hero-scroll span{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.hero-scroll-line{width:1px;height:28px;background:var(--gold)}
+ 
+/* ── CONCEPT BAND ─────────────────────── */
+.concept{
+  background:var(--cream);
+  padding:56px 24px;
+  text-align:center;
+  border-top:3px solid var(--gold);
+}
+.concept-inner{max-width:700px;margin:0 auto}
+.concept-headline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,4vw,44px);
+  font-weight:600;
+  color:var(--forest);
+  margin-bottom:16px;
+  line-height:1.15;
+}
+.concept-body{
+  font-size:15px;color:var(--text-mid);line-height:1.8;font-weight:300;
+}
+.concept-body strong{color:var(--forest);font-weight:500}
+.concept-pills{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px;
+}
+.concept-pill{
+  font-size:11px;padding:5px 14px;border-radius:20px;
+  border:1px solid var(--teal);color:var(--teal);font-weight:500;letter-spacing:.3px;
+}
+ 
+/* ── SECTION HEADER ───────────────────── */
+.section-head{
+  background:#050F0E;
+  padding:60px 24px 8px;
+  text-align:center;
+}
+.section-head h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,5vw,52px);
+  font-weight:300;
+  color:var(--white);
+  margin-bottom:8px;
+}
+.section-head h2 em{font-style:italic;color:var(--gold)}
+.section-head p{font-size:14px;color:rgba(255,255,255,.4);font-weight:300;margin-bottom:16px}
+.urgency-bar{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,162,74,.1);
+  border:1px solid rgba(201,162,74,.25);
+  border-radius:20px;
+  padding:6px 18px;
+  font-size:12px;color:var(--gold);font-weight:500;
+}
+.urgency-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--gold);
+  animation:blink 1.4s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+ 
+/* ── MENTOR GRID ──────────────────────── */
+.mentor-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:2px;
+  padding:24px;
+  max-width:1240px;
+  margin:0 auto;
+  background:#050F0E;
+}
+ 
+/* ── MENTOR CARD ──────────────────────── */
+.mentor-card{
+  background:#0A1C1A;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:0;
+  cursor:pointer;
+  transition:border-color .2s,background .2s;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.mentor-card:hover:not(.full){
+  background:#0D2220;
+  border-color:rgba(201,162,74,.3);
+  z-index:2;
+}
+.mentor-card.selected{
+  background:#0D2A27;
+  border-color:var(--gold) !important;
+  box-shadow:inset 0 0 0 1px var(--gold);
+  z-index:3;
+}
+.mentor-card.full{cursor:default;opacity:.55}
+ 
+/* gold left accent on hover */
+.mentor-card::before{
+  content:'';
+  position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--gold);
+  transform:scaleY(0);
+  transition:transform .2s;
+  transform-origin:bottom;
+}
+.mentor-card:hover:not(.full)::before,
+.mentor-card.selected::before{transform:scaleY(1)}
+ 
+/* domain bar */
+.card-domain-bar{
+  padding:9px 16px;
+  display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.card-domain{
+  font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);font-weight:500;
+}
+.card-track{
+  font-size:9px;color:rgba(255,255,255,.25);font-weight:300;letter-spacing:.5px;
+}
+ 
+/* avatar + info */
+.card-main{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 16px 12px;
+  flex:1;
+}
+.card-avatar{
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-weight:600;color:var(--white);
+  flex-shrink:0;
+  border:1.5px solid rgba(201,162,74,.25);
+}
+.card-info{flex:1;min-width:0}
+.card-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;font-weight:600;color:var(--white);
+  line-height:1.1;margin-bottom:6px;
+}
+.card-question{
+  font-size:12px;color:rgba(255,255,255,.5);
+  line-height:1.55;font-weight:300;font-style:italic;
+}
+ 
+/* CHAIRS ── the new bit */
+.card-chairs{
+  padding:12px 16px;
+  display:flex;align-items:center;gap:10px;
+  border-top:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.chair-label{
+  font-size:10px;color:rgba(255,255,255,.3);
+  letter-spacing:1px;text-transform:uppercase;
+  font-weight:400;flex-shrink:0;
+}
+.chairs-row{display:flex;gap:8px;align-items:center}
+/* SVG chair icon via inline */
+.chair-icon{
+  width:28px;height:32px;
+  flex-shrink:0;
+  transition:opacity .2s;
+}
+.chair-icon.taken{opacity:1}
+.chair-icon.empty{opacity:.35}
+ 
+/* seats text */
+.seats-text{
+  margin-left:auto;
+  font-size:11px;font-weight:400;
+  letter-spacing:.3px;
+  text-align:right;
+  line-height:1.4;
+  flex-shrink:0;
+}
+.seats-text strong{font-weight:600;font-size:12px}
+.seats-text.available{color:var(--gold)}
+.seats-text.available strong{color:var(--gold)}
+.seats-text.few{color:#E8A87C}
+.seats-text.few strong{color:#E8A87C}
+.seats-text.none{color:rgba(255,255,255,.35)}
+.seats-text.none strong{color:rgba(255,255,255,.5)}
+ 
+/* action area */
+.card-action{padding:12px 16px}
+.card-btn{
+  width:100%;padding:10px;
+  border-radius:4px;
+  font-family:'Inter',sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:1.2px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .15s,color .15s,border-color .15s;
+  border:1.5px solid;
+}
+.card-btn.reserve{
+  background:transparent;border-color:rgba(201,162,74,.4);color:var(--gold);
+}
+.mentor-card:hover:not(.full) .card-btn.reserve,
+.mentor-card.selected .card-btn.reserve{
+  background:var(--gold);border-color:var(--gold);color:var(--forest);
+}
+.mentor-card.selected .card-btn.reserve{
+  background:var(--gold);border-color:var(--gold);color:var(--forest);
+}
+.card-btn.waitlist{
+  background:transparent;border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.35);
+  cursor:pointer;
+}
+.card-btn.waitlist:hover{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.6)}
+.card-btn.selected-state{
+  background:var(--gold);border-color:var(--gold);color:var(--forest);
+}
+.card-btn:disabled{opacity:.3;cursor:not-allowed}
+ 
+/* selected badge */
+.selected-badge{
+  position:absolute;top:10px;right:10px;
+  width:22px;height:22px;border-radius:50%;
+  background:var(--gold);
+  display:none;align-items:center;justify-content:center;
+  font-size:11px;color:var(--forest);font-weight:700;
+}
+.mentor-card.selected .selected-badge{display:flex}
+ 
+/* ── REGISTRATION MODAL ───────────────── */
+.overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(5,15,14,.8);
+  z-index:200;
+  align-items:center;justify-content:center;
+  padding:20px;
+  backdrop-filter:blur(4px);
+}
+.overlay.active{display:flex}
+ 
+.modal{
+  background:#0D2220;
+  border:1px solid rgba(201,162,74,.25);
+  border-radius:12px;
+  width:100%;max-width:460px;
+  overflow:hidden;
+}
+.modal-header{
+  background:var(--forest);
+  padding:22px 24px;
+  border-bottom:2px solid var(--gold);
+  display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+}
+.modal-header-text{flex:1}
+.modal-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:600;color:var(--white);margin-bottom:2px;
+}
+.modal-subtitle{font-size:12px;color:var(--gold);font-style:italic}
+.modal-close{
+  background:none;border:none;color:rgba(255,255,255,.4);
+  font-size:24px;cursor:pointer;line-height:1;padding:0;flex-shrink:0;
+}
+.modal-close:hover{color:var(--white)}
+ 
+.modal-mentor-strip{
+  margin:20px 24px 0;
+  padding:14px;
+  background:rgba(201,162,74,.07);
+  border:1px solid rgba(201,162,74,.2);
+  border-radius:8px;
+  border-left:3px solid var(--gold);
+}
+.modal-mentor-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;font-weight:500}
+.modal-mentor-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:600;color:var(--white);line-height:1.1;
+}
+.modal-mentor-q{font-size:12px;color:rgba(255,255,255,.45);font-style:italic;margin-top:3px;line-height:1.4}
+ 
+.modal-body{padding:20px 24px 24px}
+ 
+.field{margin-bottom:16px}
+.field label{
+  display:block;font-size:10px;letter-spacing:1.5px;
+  text-transform:uppercase;color:rgba(255,255,255,.4);
+  font-weight:500;margin-bottom:6px;
+}
+.field input,.field select{
+  width:100%;padding:11px 14px;
+  background:#060F0E;
+  border:1.5px solid rgba(255,255,255,.1);
+  border-radius:6px;
+  font-family:'Inter',sans-serif;font-size:14px;
+  color:var(--white);outline:none;
+  transition:border-color .15s;
+}
+.field input::placeholder{color:rgba(255,255,255,.2)}
+.field input:focus,.field select:focus{border-color:var(--gold)}
+.field select{color:rgba(255,255,255,.7)}
+.field select option{background:#0A1C1A}
+.field .ferr{
+  font-size:11px;color:#E87C7C;margin-top:4px;display:none;
+}
+.field.err input,.field.err select{border-color:#B03A2E}
+.field.err .ferr{display:block}
+ 
+.modal-submit{
+  width:100%;padding:13px;
+  background:var(--gold);color:var(--forest);
+  border:none;border-radius:6px;
+  font-family:'Inter',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;margin-top:4px;
+  transition:background .15s,transform .15s;
+}
+.modal-submit:hover{background:var(--gold-light);transform:translateY(-1px)}
+ 
+/* Waitlist modal tweak */
+.waitlist-badge{
+  display:inline-block;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:4px;
+  padding:3px 10px;
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+  margin-left:8px;vertical-align:middle;
+}
+ 
+/* ── SUCCESS MODAL ────────────────────── */
+.success-box{
+  background:#0D2220;
+  border:1px solid rgba(201,162,74,.25);
+  border-radius:12px;
+  width:100%;max-width:420px;
+  padding:40px 32px;
+  text-align:center;
+  overflow:hidden;
+}
+.success-icon{
+  width:60px;height:60px;
+  background:var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;
+  font-size:26px;color:var(--forest);
+}
+.success-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;font-weight:600;color:var(--white);margin-bottom:8px;
+}
+.success-sub{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6;font-weight:300;margin-bottom:24px}
+.success-detail{
+  background:rgba(201,162,74,.07);
+  border:1px solid rgba(201,162,74,.2);
+  border-radius:8px;padding:16px;
+  text-align:left;margin-bottom:24px;
+}
+.sdr{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:5px;line-height:1.5}
+.sdr strong{color:var(--white);font-weight:500}
+.success-close{
+  padding:11px 32px;
+  background:var(--gold);color:var(--forest);border:none;
+  border-radius:6px;font-family:'Inter',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;
+}
+ 
+/* waitlist success */
+.wl-position{
+  font-family:'Cormorant Garamond',serif;
+  font-size:48px;font-weight:600;color:var(--gold);
+  margin:8px 0;
+}
+.wl-position-label{
+  font-size:12px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;
+  margin-bottom:16px;
+}
+ 
+/* ── STICKY BAR ───────────────────────── */
+.sticky{
+  display:none;position:fixed;
+  bottom:0;left:0;right:0;
+  background:var(--forest);
+  border-top:2px solid var(--gold);
+  padding:12px 24px;z-index:100;
+  align-items:center;justify-content:space-between;gap:12px;
+}
+.sticky.active{display:flex}
+.sticky-info{font-size:13px;color:rgba(255,255,255,.7);font-weight:300;line-height:1.4}
+.sticky-info strong{color:var(--gold);font-weight:500;display:block}
+.sticky-btn{
+  padding:10px 24px;
+  background:var(--gold);color:var(--forest);
+  border:none;border-radius:4px;
+  font-family:'Inter',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  cursor:pointer;white-space:nowrap;
+  transition:background .15s;
+}
+.sticky-btn:hover{background:var(--gold-light)}
+ 
+/* ── FOOTER ───────────────────────────── */
+.footer{
+  background:#030A09;
+  color:rgba(255,255,255,.3);
+  text-align:center;padding:32px 24px;
+  font-size:12px;font-weight:300;
+  border-top:1px solid rgba(201,162,74,.1);
+}
+.footer strong{color:var(--gold);font-weight:500}
+ 
+/* ── RESPONSIVE ───────────────────────── */
+@media(max-width:640px){
+  .mentor-grid{grid-template-columns:1fr;padding:12px}
+  .hero-meta{flex-direction:column;align-items:center}
+  .hero-meta-item:first-child,.hero-meta-item:last-child{border-radius:6px}
+  .sticky{padding:10px 14px}
+}
+</style>
+</head>
+<body>
+ 
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      <span class="hero-eyebrow-text">World Heart Day Conference</span>
+      <span class="hero-eyebrow-line"></span>
+    </div>
+    <div class="hero-logo-area">
+      <div class="hero-zandra">Zandra Healthcare Presents</div>
+    </div>
+    <div class="hero-title">
+      <div class="hero-title-dmm">Dil Maange</div>
+      <div class="hero-title-year">More 2026</div>
+    </div>
+    <div class="hero-presents">invites you to</div>
+    <div class="hero-session">The Canteen</div>
+ 
+    <p class="hero-tagline">
+      The best lessons in medicine were never taught in classrooms.<br>
+      They happened over chai — honest, unscripted, <em>face to face.</em><br>
+      25 mentors. 25 tables. 3 seats each. Pick yours.
+    </p>
+ 
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Date</div>
+        <div class="hero-meta-value">September 27, 2026</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Session</div>
+        <div class="hero-meta-value">2:30 – 5:00 PM</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Venue</div>
+        <div class="hero-meta-value">Aurika, Mumbai Airport</div>
+      </div>
+    </div>
+ 
+    <button class="hero-cta" onclick="document.getElementById('grid-section').scrollIntoView({behavior:'smooth'})">
+      Choose your mentor
+    </button>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+ 
+<!-- ══ CONCEPT ══ -->
+<section class="concept">
+  <div class="concept-inner">
+    <h2 class="concept-headline">One mentor. One table. One conversation that changes things.</h2>
+    <p class="concept-body">
+      Pick a mentor whose question keeps you up at night. <strong>Reserve your seat before the conference.</strong>
+      On September 27, you'll sit at their table — a canteen-style discussion where they speak for 15 minutes, then you take over. No formality. No slides. Just the conversation you always wanted to have with someone who's been where you're going.
+    </p>
+    <div class="concept-pills">
+      <span class="concept-pill">Career strategy</span>
+      <span class="concept-pill">KOL journey</span>
+      <span class="concept-pill">Personal branding</span>
+      <span class="concept-pill">Practice economics</span>
+      <span class="concept-pill">Digital & social</span>
+      <span class="concept-pill">Wealth & investing</span>
+      <span class="concept-pill">Leadership</span>
+      <span class="concept-pill">Entrepreneurship</span>
+    </div>
+  </div>
+</section>
+ 
+<!-- ══ GRID SECTION ══ -->
+<div class="section-head" id="grid-section">
+  <h2>25 mentors. <em>75 seats.</em></h2>
+  <p>One session per attendee. Sessions fill fast — when full, join the waitlist.</p>
+  <span class="urgency-bar">
+    <span class="urgency-dot"></span>
+    <span id="urgencyText">25 mentors available · 75 seats remaining</span>
+  </span>
+</div>
+ 
+<div class="mentor-grid" id="mentorGrid"></div>
+ 
+<!-- ══ REGISTRATION OVERLAY ══ -->
+<div class="overlay" id="regOverlay">
+  <div class="modal" id="regModal">
+    <div class="modal-header">
+      <div class="modal-header-text">
+        <div class="modal-title" id="modalTitle">Reserve your seat</div>
+        <div class="modal-subtitle" id="modalSubtitle">The Canteen · DMM 2026</div>
+      </div>
+      <button class="modal-close" id="modalClose">×</button>
+    </div>
+    <div class="modal-mentor-strip">
+      <div class="modal-mentor-label">Your mentor</div>
+      <div class="modal-mentor-name" id="mName"></div>
+      <div class="modal-mentor-q" id="mQ"></div>
+    </div>
+    <div class="modal-body">
+      <div class="field" id="f-name">
+        <label for="iName">Full name</label>
+        <input type="text" id="iName" placeholder="Dr. Priya Sharma">
+        <div class="ferr">Please enter your full name</div>
+      </div>
+      <div class="field" id="f-phone">
+        <label for="iPhone">Mobile number</label>
+        <input type="tel" id="iPhone" placeholder="10-digit mobile number" maxlength="10">
+        <div class="ferr">Enter a valid 10-digit number</div>
+      </div>
+      <div class="field" id="f-spec">
+        <label for="iSpec">Specialty / Designation</label>
+        <input type="text" id="iSpec" placeholder="Diabetologist, PG Resident, GP…">
+        <div class="ferr">Please enter your specialty</div>
+      </div>
+      <button class="modal-submit" id="modalSubmit">Confirm my seat →</button>
+    </div>
+  </div>
+</div>
+ 
+<!-- ══ SUCCESS OVERLAY ══ -->
+<div class="overlay" id="successOverlay">
+  <div class="success-box">
+    <div class="success-icon" id="sucIcon">✦</div>
+    <h2 class="success-title" id="sucTitle">Seat reserved.</h2>
+    <p class="success-sub" id="sucSub">Your canteen table is confirmed. See you on September 27.</p>
+    <div class="success-detail" id="sucDetail"></div>
+    <button class="success-close" onclick="closeSuccess()">Done</button>
+  </div>
+</div>
+ 
+<!-- ══ STICKY BAR ══ -->
+<div class="sticky" id="stickyBar">
+  <div class="sticky-info">
+    <strong id="stickyName">—</strong>
+    <span id="stickyDomain"></span>
+  </div>
+  <button class="sticky-btn" id="stickyBtn">Register now →</button>
+</div>
+ 
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <strong>Dil Maange More 2026</strong> · Presented by Zandra Healthcare<br>
+  <span style="margin-top:6px;display:block">Sep 27, 2026 · Aurika by Lemon Tree Hotels, Mumbai International Airport</span>
+</footer>
+ 
+<script>
+const MENTORS = [
+  {name:"Dr Mahendra Patel",domain:"Practice building",question:"How do I build a vaccination clinic?"},
+  {name:"Dr Alpana Sowani",domain:"KOL journey",question:"How do I go from 'doctor' to a recognised KOL?"},
+  {name:"Dr Girish Rajadhyaksh",domain:"Research",question:"How do I publish my first paper without getting lost?"},
+  {name:"Dr Jaydeep Palep",domain:"Academic visibility",question:"How do I get invited to speak on national platforms?"},
+  {name:"Dr Ritu Johari",domain:"Presentation",question:"How do I become a memorable speaker?"},
+  {name:"Dr Firdous Shaukh",domain:"Personal branding",question:"How do I build my personal brand without looking self-promotional?"},
+  {name:"Dr Shubhashree Patil",domain:"Digital",question:"Social media & medical practice — where do I draw the line?"},
+  {name:"Dr Vishal Gabale",domain:"Social media",question:"How do I make Instagram/YouTube work without becoming an influencer?"},
+  {name:"Dr Ridhi Rathi",domain:"Entrepreneurship",question:"How do I turn a small clinic into a scalable healthcare business?"},
+  {name:"Dr Nikhil Nasikar",domain:"Career strategy",question:"When should I open my own clinic — and when shouldn't I?"},
+  {name:"Dr Indumathi Kuberan",domain:"Practice economics",question:"How do I choose to study more or add more degrees?"},
+  {name:"Dr Gaurav Beswal",domain:"Pricing",question:"How do I price my consultation without guilt?"},
+  {name:"Dr Sanhita Walwalkar",domain:"Leadership",question:"How do I build a team that doesn't depend on me for everything?"},
+  {name:"Dr Rukya Surya",domain:"People management",question:"How do I hire — and retain — great clinic staff?"},
+  {name:"Dr Seema Bagri",domain:"Patient experience",question:"How do I make patients come back without 'marketing' to them?"},
+  {name:"Dr Kamlesh Nayak",domain:"Wealth",question:"How should a doctor invest the first 1 crore?"},
+  {name:"Dr Dharmen Punatar",domain:"Investing",question:"Property, stocks or mutual funds — which role should each play?"},
+  {name:"Dr Suresh Purohit",domain:"Wealth protection",question:"How do I protect the wealth I've spent 20 years creating?"},
+  {name:"Dr Kamini Lakhiani",domain:"Industry relationships",question:"How do I become a wellness consultant?"},
+  {name:"Dr Abhijit Jadhav",domain:"Entrepreneurship",question:"How do I build an ethical obesity practice?"},
+  {name:"Dr Anushree Mehta",domain:"Practice",question:"How do I set a centre of excellence for Type 1 Diabetes?"},
+  {name:"Dr Rajesh Yadav",domain:"Practice",question:"How do I set up a state-of-the-art centre for Diabetes?"},
+  {name:"Dr Imran Haffizi",domain:"Professional boundaries",question:"How do I say no to admissions and still retain the patient?"},
+  {name:"Dr Kiran Shah",domain:"Legacy",question:"How do I build academic & private practice together?"},
+  {name:"Dr Pranjali Shah",domain:"Life & career",question:"How do I build a great medical career without sacrificing my life?"},
+];
+ 
+const TOTAL_SEATS = 3;
+const taken     = MENTORS.map(()=>0);
+const waitlists = MENTORS.map(()=>0);
+ 
+// multi-select: set of indices the user has registered for this session
+const registeredSet = new Set();
+let pendingIdx = null;
+let modalMode  = 'reserve';
+ 
+const AVATAR_COLORS = [
+  '#1A5C56','#2E7A73','#0D3B38','#1B6B5E',
+  '#245E58','#1A4E49','#2A6B65','#0F4440',
+  '#1C6460','#235C58','#175449','#0E3C3A'
+];
+ 
+function initials(name){
+  return name.replace('Dr ','').trim().split(' ').slice(0,2).map(w=>w[0]).join('');
+}
+ 
+// Chair SVG
+function chairSVG(state){
+  const col = state==='taken' ? '#C9A24A' : 'rgba(201,162,74,0.22)';
+  const stroke = state==='taken' ? 'rgba(201,162,74,0.6)' : 'rgba(201,162,74,0.2)';
+  return `<svg class="chair-icon ${state}" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="2" width="20" height="12" rx="2" fill="${col}" stroke="${stroke}" stroke-width="1.2"/>
+    <rect x="7" y="14" width="14" height="3" rx="1" fill="${col}" stroke="${stroke}" stroke-width="1.2"/>
+    <rect x="7" y="17" width="3" height="13" rx="1.5" fill="${col}" stroke="${stroke}" stroke-width="1"/>
+    <rect x="18" y="17" width="3" height="13" rx="1.5" fill="${col}" stroke="${stroke}" stroke-width="1"/>
+    <rect x="3" y="2" width="3" height="16" rx="1.5" fill="${col}" stroke="${stroke}" stroke-width="1"/>
+    <rect x="22" y="2" width="3" height="16" rx="1.5" fill="${col}" stroke="${stroke}" stroke-width="1"/>
+  </svg>`;
+}
+ 
+function renderGrid(){
+  const grid = document.getElementById('mentorGrid');
+  grid.innerHTML = '';
+  MENTORS.forEach((m,i)=>{
+    const t        = taken[i];
+    const left     = TOTAL_SEATS - t;
+    const isFull   = left <= 0;
+    const isReg    = registeredSet.has(i);
+    const wlCount  = waitlists[i]; // now an integer from API
+ 
+    const card = document.createElement('div');
+    card.className = 'mentor-card' + (isFull?' full':'') + (isReg&&!isFull?' selected':'');
+ 
+    // chairs: show all 3, filled = taken
+    let chairsHTML = '';
+    for(let c=0;c<TOTAL_SEATS;c++){
+      chairsHTML += chairSVG(c < t ? 'taken' : 'empty');
+    }
+ 
+    // status line: "3/3 taken · 5 on waitlist" or "1/3 taken · 2 seats left"
+    const takenFrac = `${t}/${TOTAL_SEATS} taken`;
+    let statusRight, statusClass;
+    if(isFull){
+      statusRight = `· ${wlCount} on waitlist`;
+      statusClass = wlCount > 0 ? 'few' : 'none';
+    } else if(left===1){
+      statusRight = '· last seat!';
+      statusClass = 'few';
+    } else {
+      statusRight = `· ${left} seats left`;
+      statusClass = 'available';
+    }
+ 
+    let btnHTML;
+    if(isFull){
+      btnHTML = `<button class="card-btn waitlist">Join waitlist${wlCount > 0 ? ' · '+wlCount+' waiting' : ''}</button>`;
+    } else if(isReg){
+      btnHTML = `<button class="card-btn selected-state">Registered ✓</button>`;
+    } else {
+      btnHTML = `<button class="card-btn reserve">Reserve a seat</button>`;
+    }
+ 
+    card.innerHTML = `
+      <div class="card-domain-bar">
+        <span class="card-domain">${m.domain}</span>
+        <span class="card-track">The Canteen</span>
+      </div>
+      <div class="card-main">
+        <div class="card-avatar" style="background:${AVATAR_COLORS[i%AVATAR_COLORS.length]}">${initials(m.name)}</div>
+        <div class="card-info">
+          <div class="card-name">${m.name}</div>
+          <div class="card-question">"${m.question}"</div>
+        </div>
+      </div>
+      <div class="card-chairs">
+        <span class="chair-label">Seats</span>
+        <div class="chairs-row">${chairsHTML}</div>
+        <span class="seats-text ${statusClass}"><strong>${takenFrac}</strong>&nbsp;${statusRight}</span>
+      </div>
+      <div class="card-action">${btnHTML}</div>
+      <div class="selected-badge">✓</div>
+    `;
+ 
+    const btn = card.querySelector('.card-btn');
+    if(btn){
+      btn.addEventListener('click', e=>{
+        e.stopPropagation();
+        if(isReg) return; // already registered, no action
+        if(isFull){
+          openModal(i, 'waitlist');
+        } else {
+          openModal(i, 'reserve');
+        }
+      });
+    }
+    grid.appendChild(card);
+  });
+  updateUrgency();
+  updateSticky();
+}
+ 
+function updateUrgency(){
+  const avail = MENTORS.filter((_,i)=>(TOTAL_SEATS-taken[i])>0).length;
+  const totalLeft = MENTORS.reduce((a,_,i)=>a+(TOTAL_SEATS-taken[i]),0);
+  const totalWL = waitlists.reduce((a,w)=>a+w, 0);
+  let txt = avail+' mentors available · '+totalLeft+' seats remaining';
+  if(totalWL>0) txt += ' · '+totalWL+' on waitlists';
+  document.getElementById('urgencyText').textContent = txt;
+}
+ 
+function updateSticky(){
+  const bar = document.getElementById('stickyBar');
+  const count = registeredSet.size;
+  if(count>0){
+    bar.classList.add('active');
+    const names = [...registeredSet].map(i=>MENTORS[i].name.replace('Dr ','')).join(', ');
+    document.getElementById('stickyName').textContent = count+' session'+(count>1?'s':'')+' reserved';
+    document.getElementById('stickyDomain').textContent = names;
+  } else {
+    bar.classList.remove('active');
+  }
+}
+ 
+// Modal
+function openModal(idx, mode){
+  modalMode = mode;
+  pendingIdx = idx;
+  const m = MENTORS[idx];
+ 
+  document.getElementById('mName').textContent = m.name;
+  document.getElementById('mQ').textContent = '"'+m.question+'"';
+ 
+  if(mode==='waitlist'){
+    document.getElementById('modalTitle').textContent = 'Join the waitlist';
+    document.getElementById('modalSubtitle').innerHTML = m.domain+' <span class="waitlist-badge">Session full</span>';
+    document.getElementById('modalSubmit').textContent = 'Join waitlist →';
+  } else {
+    document.getElementById('modalTitle').textContent = 'Reserve your seat';
+    document.getElementById('modalSubtitle').textContent = 'The Canteen · DMM 2026';
+    document.getElementById('modalSubmit').textContent = 'Confirm my seat →';
+  }
+  clearFields();
+  document.getElementById('regOverlay').classList.add('active');
+  setTimeout(()=>document.getElementById('iName').focus(),100);
+}
+ 
+document.getElementById('modalClose').onclick = ()=>{
+  document.getElementById('regOverlay').classList.remove('active');
+};
+document.getElementById('regOverlay').addEventListener('click', e=>{
+  if(e.target===document.getElementById('regOverlay'))
+    document.getElementById('regOverlay').classList.remove('active');
+});
+ 
+document.getElementById('stickyBtn').onclick = ()=>{};
+ 
+function clearFields(){
+  ['name','phone','spec'].forEach(f=>{
+    const el = document.getElementById('f-'+f);
+    if(el) el.classList.remove('err');
+    const inp = document.getElementById('i'+f.charAt(0).toUpperCase()+f.slice(1));
+    if(inp) inp.value='';
+  });
+}
+ 
+['iName','iPhone','iSpec'].forEach(id=>{
+  const el = document.getElementById(id);
+  if(el) el.addEventListener('input',function(){
+    const field = this.closest('.field');
+    if(field) field.classList.remove('err');
+  });
+});
+ 
+// ── REGISTRATION SUBMIT ───────────────────────────────────────────
+ 
+async function sendToWeb3Forms(payload) {
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzvjjQs7CdoCOsAeA_3rPTubzKJBEM4CAan8Mg89ZNjeCuFTs1FRz4mv5AIWqD98w/exec';
+  const res = await fetch(APPS_SCRIPT_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      type:             payload.type,
+      name:             payload.name,
+      phone:            payload.phone,
+      specialty:        payload.specialty,
+      mentor:           payload.mentor,
+      domain:           payload.domain,
+      waitlistPosition: payload.waitlistPosition || ''
+    })
+  });
+  const json = await res.json();
+  return { success: json.status === 'success', message: json.message || '' };
+}
+// ─────────────────────────────────────────────────────────────────
+ 
+document.getElementById('modalSubmit').onclick = async ()=>{
+  const name = document.getElementById('iName').value.trim();
+  const phone = document.getElementById('iPhone').value.trim();
+  const spec = document.getElementById('iSpec').value.trim();
+  let valid = true;
+  if(!name){document.getElementById('f-name').classList.add('err');valid=false}
+  else document.getElementById('f-name').classList.remove('err');
+  if(!/^\d{10}$/.test(phone)){document.getElementById('f-phone').classList.add('err');valid=false}
+  else document.getElementById('f-phone').classList.remove('err');
+  if(!spec){document.getElementById('f-spec').classList.add('err');valid=false}
+  else document.getElementById('f-spec').classList.remove('err');
+  if(!valid) return;
+ 
+  const m = MENTORS[pendingIdx];
+  const btn = document.getElementById('modalSubmit');
+  btn.textContent = 'Submitting…';
+  btn.disabled = true;
+ 
+  const isWaitlist = modalMode === 'waitlist';
+  const wlPos = isWaitlist ? (waitlists[pendingIdx] + 1) : '';
+ 
+  try {
+    const result = await sendToWeb3Forms({
+      type: isWaitlist ? 'WAITLIST' : 'RESERVATION',
+      name, phone,
+      specialty: spec,
+      mentor: m.name,
+      domain: m.domain,
+      waitlistPosition: wlPos
+    });
+    if(!result.success) throw new Error(result.message || 'Submission failed');
+  } catch(err) {
+    btn.textContent = isWaitlist ? 'Join waitlist →' : 'Confirm my seat →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again.\n\n' + err.message);
+    return;
+  }
+ 
+  btn.textContent = isWaitlist ? 'Join waitlist →' : 'Confirm my seat →';
+  btn.disabled = false;
+ 
+  if(isWaitlist){
+    waitlists[pendingIdx]++;
+    const pos = waitlists[pendingIdx];
+    document.getElementById('sucIcon').textContent = '⌛';
+    document.getElementById('sucIcon').style.background = 'rgba(201,162,74,0.2)';
+    document.getElementById('sucIcon').style.fontSize = '22px';
+    document.getElementById('sucTitle').textContent = 'You\'re on the waitlist.';
+    document.getElementById('sucSub').textContent = 'We\'ll notify you if a seat opens up. Here\'s where you stand:';
+    document.getElementById('sucDetail').innerHTML = `
+      <div class="wl-position">#${pos}</div>
+      <div class="wl-position-label">on the waitlist for ${m.name}</div>
+      <div class="sdr"><strong>Theme:</strong> ${m.domain}</div>
+      <div class="sdr"><strong>Session:</strong> 2:30 – 5:00 PM, Sep 27 2026</div>
+      <div class="sdr"><strong>Venue:</strong> Aurika, Mumbai Airport</div>
+    `;
+  } else {
+    taken[pendingIdx]++;
+    registeredSet.add(pendingIdx);
+    const count = registeredSet.size;
+    document.getElementById('sucIcon').textContent = '✦';
+    document.getElementById('sucIcon').style.background = 'var(--gold)';
+    document.getElementById('sucIcon').style.fontSize = '26px';
+    document.getElementById('sucTitle').textContent = 'Seat reserved.';
+    document.getElementById('sucSub').textContent = count>1
+      ? `${count} sessions booked. See you at The Canteen on September 27.`
+      : 'Your canteen table is confirmed. See you on September 27.';
+    document.getElementById('sucDetail').innerHTML = `
+      <div class="sdr"><strong>Mentor:</strong> ${m.name}</div>
+      <div class="sdr"><strong>Theme:</strong> ${m.domain}</div>
+      <div class="sdr"><strong>Table:</strong> The Canteen, Aurika Hotel, Mumbai Airport</div>
+      <div class="sdr"><strong>Time:</strong> 2:30 – 5:00 PM, Sep 27 2026</div>
+      ${count>1?`<div class="sdr" style="margin-top:8px;color:var(--gold-light)">You now have ${count} sessions reserved in total.</div>`:''}
+    `;
+  }
+  document.getElementById('regOverlay').classList.remove('active');
+  document.getElementById('successOverlay').classList.add('active');
+  renderGrid();
+};
+ 
+function closeSuccess(){
+  document.getElementById('successOverlay').classList.remove('active');
+}
+ 
+// Boot
+renderGrid();
+</script>
+</body>
+</html>
