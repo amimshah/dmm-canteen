@@ -953,23 +953,22 @@ function clearFields(){
 // ── REGISTRATION SUBMIT ───────────────────────────────────────────
  
 async function sendToWeb3Forms(payload) {
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwzv7KqxvfRp8M_z2cjsTkw-FBxrACJXqTF9jjQK67jOcOEf039CWqouAkZ8N9x_vU/exec';
-  const res = await fetch(APPS_SCRIPT_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      type:             payload.type,
-      name:             payload.name,
-      phone:            payload.phone,
-      specialty:        payload.specialty,
-      mentor:           payload.mentor,
-      domain:           payload.domain,
-      waitlistPosition: payload.waitlistPosition || ''
-    })
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyp-CD_tzwlPz46ghIkoV3A24LnfFVpgBlfzAbHrs2y8sstM47Y3lahBHoU8pLT6Pg/exec';
+  const params = new URLSearchParams({
+    type:             payload.type,
+    name:             payload.name,
+    phone:            payload.phone,
+    specialty:        payload.specialty,
+    mentor:           payload.mentor,
+    domain:           payload.domain,
+    waitlistPosition: payload.waitlistPosition || ''
   });
-  // no-cors returns opaque response — assume success if no network error
+  const res = await fetch(APPS_SCRIPT_URL + '?' + params.toString(), {
+    method: 'GET',
+    mode: 'no-cors'
+  });
   return { success: true, message: '' };
+}
 }
 // ─────────────────────────────────────────────────────────────────
  
