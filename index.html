@@ -768,10 +768,45 @@ const TOTAL_SEATS = 3;
 const taken     = MENTORS.map(()=>0);
 const waitlists = MENTORS.map(()=>0);
 
-// multi-select: set of indices the user has registered for this session
 const registeredSet = new Set();
 let pendingIdx = null;
 let modalMode  = 'reserve';
+
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwxM09ychbNaoCcRkKp8zX0mzcUfrwcxJSHrliEHnOO2qjxlpJ9Z8U2kQ1Tuxj9o6c/exec';
+
+function applyLiveCounts(data) {
+  MENTORS.forEach((m, i) => {
+    taken[i]     = (data.reserved  && data.reserved[m.name])  || 0;
+    waitlists[i] = (data.waitlists && data.waitlists[m.name]) || 0;
+  });
+}
+
+function fetchLiveCounts() {
+  return new Promise((resolve) => {
+    const cbName = 'jsonp_' + Date.now();
+    const script = document.createElement('script');
+    let done = false;
+    window[cbName] = (data) => {
+      done = true;
+      delete window[cbName];
+      if(script.parentNode) script.parentNode.removeChild(script);
+      resolve(data);
+    };
+    script.onerror = () => {
+      if(!done){ delete window[cbName]; if(script.parentNode) script.parentNode.removeChild(script); resolve(null); }
+    };
+    setTimeout(()=>{ if(!done){ delete window[cbName]; if(script.parentNode) script.parentNode.removeChild(script); resolve(null); } }, 8000);
+    script.src = APPS_SCRIPT_URL + '?callback=' + cbName + '&t=' + Date.now();
+    document.body.appendChild(script);
+  });
+}
+
+async function loadLiveCounts() {
+  document.getElementById('urgencyText').textContent = 'Loading availability…';
+  const data = await fetchLiveCounts();
+  if(data && data.status === 'success') applyLiveCounts(data);
+  renderGrid();
+}
 
 const AVATAR_COLORS = [
   '#1A5C56','#2E7A73','#0D3B38','#1B6B5E',
@@ -953,7 +988,6 @@ function clearFields(){
 // ── REGISTRATION SUBMIT ───────────────────────────────────────────
 
 async function sendToWeb3Forms(payload) {
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxOqCpWeSVKPw65DuW1Nn0O8MKTvfDwTc5xJKmD3mqW1Xh4LCTQtnOS45x1gPI58HY/exec';
   const params = new URLSearchParams({
     type:             payload.type,
     name:             payload.name,
@@ -963,10 +997,13 @@ async function sendToWeb3Forms(payload) {
     domain:           payload.domain,
     waitlistPosition: payload.waitlistPosition || ''
   });
-  const res = await fetch(APPS_SCRIPT_URL + '?' + params.toString(), {
+  await fetch(APPS_SCRIPT_URL + '?' + params.toString(), {
     method: 'GET',
     mode: 'no-cors'
   });
+  // After write, re-fetch live counts via JSONP
+  const data = await fetchLiveCounts();
+  if(data && data.status === 'success') applyLiveCounts(data);
   return { success: true, message: '' };
 }
 // ─────────────────────────────────────────────────────────────────
@@ -1055,8 +1092,8 @@ function closeSuccess(){
   document.getElementById('successOverlay').classList.remove('active');
 }
 
-// Boot
-renderGrid();
+// Boot — load live counts then render
+loadLiveCounts();
 </script>
 </body>
 </html>
