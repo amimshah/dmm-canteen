@@ -26,10 +26,10 @@
   --chair-taken:#C9A24A;
   --chair-stroke:rgba(201,162,74,0.5);
 }
-
+ 
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-height:100vh;overflow-x:hidden}
-
+ 
 /* ── HERO ─────────────────────────────── */
 .hero{
   position:relative;
@@ -56,15 +56,15 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   animation:pulse 4s ease-in-out infinite;
 }
 @keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6}50%{transform:translate(-50%,-50%) scale(1.15);opacity:1}}
-
+ 
 .hero-grain{
   position:absolute;inset:0;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
   opacity:.4;pointer-events:none;
 }
-
+ 
 .hero-content{position:relative;z-index:2}
-
+ 
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:12px;
   margin-bottom:28px;
@@ -74,13 +74,13 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   font-size:10px;letter-spacing:3px;text-transform:uppercase;
   color:var(--gold);font-weight:500;
 }
-
+ 
 .hero-logo-area{margin-bottom:20px}
 .hero-zandra{
   font-size:11px;letter-spacing:4px;text-transform:uppercase;
   color:rgba(255,255,255,.4);font-weight:300;margin-bottom:4px;
 }
-
+ 
 .hero-title{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(56px,11vw,120px);
@@ -91,7 +91,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
 }
 .hero-title-dmm{color:var(--white)}
 .hero-title-year{color:var(--gold)}
-
+ 
 .hero-presents{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(18px,3vw,28px);
@@ -101,7 +101,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   letter-spacing:1px;
   margin-bottom:6px;
 }
-
+ 
 .hero-session{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(36px,6vw,72px);
@@ -119,7 +119,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   height:2px;
   background:linear-gradient(90deg, transparent, var(--gold), transparent);
 }
-
+ 
 .hero-tagline{
   max-width:500px;
   margin:28px auto 36px;
@@ -129,7 +129,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   font-weight:300;
 }
 .hero-tagline em{color:var(--gold-light);font-style:normal;font-weight:400}
-
+ 
 .hero-meta{
   display:flex;flex-wrap:wrap;justify-content:center;gap:2px;
   margin-bottom:40px;
@@ -143,7 +143,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
 .hero-meta-item:last-child{border-radius:0 8px 8px 0}
 .hero-meta-label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:4px}
 .hero-meta-value{font-size:13px;color:var(--white);font-weight:300;line-height:1.3}
-
+ 
 .hero-cta{
   display:inline-block;
   padding:14px 40px;
@@ -159,7 +159,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   transition:background .2s, transform .15s;
 }
 .hero-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
-
+ 
 .hero-scroll{
   position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:6px;
@@ -168,7 +168,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(5px)}}
 .hero-scroll span{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
 .hero-scroll-line{width:1px;height:28px;background:var(--gold)}
-
+ 
 /* ── CONCEPT BAND ─────────────────────── */
 .concept{
   background:var(--cream);
@@ -196,7 +196,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   font-size:11px;padding:5px 14px;border-radius:20px;
   border:1px solid var(--teal);color:var(--teal);font-weight:500;letter-spacing:.3px;
 }
-
+ 
 /* ── SECTION HEADER ───────────────────── */
 .section-head{
   background:#050F0E;
@@ -225,7 +225,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   animation:blink 1.4s ease-in-out infinite;
 }
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-
+ 
 /* ── MENTOR GRID ──────────────────────── */
 .mentor-grid{
   display:grid;
@@ -237,7 +237,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   background:#050F0E;
   transition:opacity .4s ease;
 }
-
+ 
 /* ── MENTOR CARD ──────────────────────── */
 .mentor-card{
   background:#0A1C1A;
@@ -262,7 +262,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   z-index:3;
 }
 .mentor-card.full{cursor:default;opacity:.55}
-
+ 
 /* gold left accent on hover */
 .mentor-card::before{
   content:'';
@@ -274,7 +274,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
 }
 .mentor-card:hover:not(.full)::before,
 .mentor-card.selected::before{transform:scaleY(1)}
-
+ 
 /* domain bar */
 .card-domain-bar{
   padding:9px 16px;
@@ -288,7 +288,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
 .card-track{
   font-size:9px;color:rgba(255,255,255,.25);font-weight:300;letter-spacing:.5px;
 }
-
+ 
 /* avatar + info */
 .card-main{
   display:flex;align-items:flex-start;gap:14px;
@@ -313,7 +313,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   font-size:12px;color:rgba(255,255,255,.5);
   line-height:1.55;font-weight:300;font-style:italic;
 }
-
+ 
 /* CHAIRS ── the new bit */
 .card-chairs{
   padding:12px 16px;
@@ -335,7 +335,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
 }
 .chair-icon.taken{opacity:1}
 .chair-icon.empty{opacity:.35}
-
+ 
 /* seats text */
 .seats-text{
   margin-left:auto;
@@ -352,7 +352,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
 .seats-text.few strong{color:#E8A87C}
 .seats-text.none{color:rgba(255,255,255,.35)}
 .seats-text.none strong{color:rgba(255,255,255,.5)}
-
+ 
 /* action area */
 .card-action{padding:12px 16px}
 .card-btn{
@@ -384,7 +384,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   background:var(--gold);border-color:var(--gold);color:var(--forest);
 }
 .card-btn:disabled{opacity:.3;cursor:not-allowed}
-
+ 
 /* selected badge */
 .selected-badge{
   position:absolute;top:10px;right:10px;
@@ -394,7 +394,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   font-size:11px;color:var(--forest);font-weight:700;
 }
 .mentor-card.selected .selected-badge{display:flex}
-
+ 
 /* ── REGISTRATION MODAL ───────────────── */
 .overlay{
   display:none;position:fixed;inset:0;
@@ -405,7 +405,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   backdrop-filter:blur(4px);
 }
 .overlay.active{display:flex}
-
+ 
 .modal{
   background:#0D2220;
   border:1px solid rgba(201,162,74,.25);
@@ -430,7 +430,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   font-size:24px;cursor:pointer;line-height:1;padding:0;flex-shrink:0;
 }
 .modal-close:hover{color:var(--white)}
-
+ 
 .modal-mentor-strip{
   margin:20px 24px 0;
   padding:14px;
@@ -445,9 +445,9 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   font-size:20px;font-weight:600;color:var(--white);line-height:1.1;
 }
 .modal-mentor-q{font-size:12px;color:rgba(255,255,255,.45);font-style:italic;margin-top:3px;line-height:1.4}
-
+ 
 .modal-body{padding:20px 24px 24px}
-
+ 
 .field{margin-bottom:16px}
 .field label{
   display:block;font-size:10px;letter-spacing:1.5px;
@@ -472,7 +472,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
 }
 .field.err input,.field.err select{border-color:#B03A2E}
 .field.err .ferr{display:block}
-
+ 
 .modal-submit{
   width:100%;padding:13px;
   background:var(--gold);color:var(--forest);
@@ -483,7 +483,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   transition:background .15s,transform .15s;
 }
 .modal-submit:hover{background:var(--gold-light);transform:translateY(-1px)}
-
+ 
 /* Waitlist modal tweak */
 .waitlist-badge{
   display:inline-block;
@@ -495,7 +495,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   color:rgba(255,255,255,.5);
   margin-left:8px;vertical-align:middle;
 }
-
+ 
 /* ── SUCCESS MODAL ────────────────────── */
 .success-box{
   background:#0D2220;
@@ -533,7 +533,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
   cursor:pointer;
 }
-
+ 
 /* waitlist success */
 .wl-position{
   font-family:'Cormorant Garamond',serif;
@@ -544,7 +544,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   font-size:12px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;
   margin-bottom:16px;
 }
-
+ 
 /* ── STICKY BAR ───────────────────────── */
 .sticky{
   display:none;position:fixed;
@@ -567,7 +567,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   transition:background .15s;
 }
 .sticky-btn:hover{background:var(--gold-light)}
-
+ 
 /* ── FOOTER ───────────────────────────── */
 .footer{
   background:#030A09;
@@ -577,7 +577,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   border-top:1px solid rgba(201,162,74,.1);
 }
 .footer strong{color:var(--gold);font-weight:500}
-
+ 
 /* ── RESPONSIVE ───────────────────────── */
 @media(max-width:640px){
   .mentor-grid{grid-template-columns:1fr;padding:12px}
@@ -588,7 +588,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
 </style>
 </head>
 <body>
-
+ 
 <!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -609,13 +609,13 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
     </div>
     <div class="hero-presents">invites you to</div>
     <div class="hero-session">The Canteen</div>
-
+ 
     <p class="hero-tagline">
       The best lessons in medicine were never taught in classrooms.<br>
       They happened over chai — honest, unscripted, <em>face to face.</em><br>
       25 mentors. 25 tables. 3 seats each. Pick yours.
     </p>
-
+ 
     <div class="hero-meta">
       <div class="hero-meta-item">
         <div class="hero-meta-label">Date</div>
@@ -630,7 +630,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
         <div class="hero-meta-value">Aurika, Mumbai Airport</div>
       </div>
     </div>
-
+ 
     <button class="hero-cta" onclick="document.getElementById('grid-section').scrollIntoView({behavior:'smooth'})">
       Choose your mentor
     </button>
@@ -640,7 +640,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
     <div class="hero-scroll-line"></div>
   </div>
 </section>
-
+ 
 <!-- ══ CONCEPT ══ -->
 <section class="concept">
   <div class="concept-inner">
@@ -661,7 +661,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
     </div>
   </div>
 </section>
-
+ 
 <!-- ══ GRID SECTION ══ -->
 <div class="section-head" id="grid-section">
   <h2>25 mentors. <em>75 seats.</em></h2>
@@ -671,9 +671,9 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
     <span id="urgencyText">25 mentors available · 75 seats remaining</span>
   </span>
 </div>
-
+ 
 <div class="mentor-grid" id="mentorGrid"></div>
-
+ 
 <!-- ══ REGISTRATION OVERLAY ══ -->
 <div class="overlay" id="regOverlay">
   <div class="modal" id="regModal">
@@ -709,7 +709,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
     </div>
   </div>
 </div>
-
+ 
 <!-- ══ SUCCESS OVERLAY ══ -->
 <div class="overlay" id="successOverlay">
   <div class="success-box">
@@ -720,7 +720,7 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
     <button class="success-close" onclick="closeSuccess()">Done</button>
   </div>
 </div>
-
+ 
 <!-- ══ STICKY BAR ══ -->
 <div class="sticky" id="stickyBar">
   <div class="sticky-info">
@@ -729,13 +729,13 @@ body{font-family:'Inter',sans-serif;background:#050F0E;color:var(--white);min-he
   </div>
   <button class="sticky-btn" id="stickyBtn">Register now →</button>
 </div>
-
+ 
 <!-- ══ FOOTER ══ -->
 <footer class="footer">
   <strong>Dil Maange More 2026</strong> · Presented by Zandra Healthcare<br>
   <span style="margin-top:6px;display:block">Sep 27, 2026 · Aurika by Lemon Tree Hotels, Mumbai International Airport</span>
 </footer>
-
+ 
 <script>
 const MENTORS = [
   {name:"Dr Mahendra Patel",domain:"Practice building",question:"How do I build a vaccination clinic?"},
@@ -764,24 +764,24 @@ const MENTORS = [
   {name:"Dr Kiran Shah",domain:"Legacy",question:"How do I build academic & private practice together?"},
   {name:"Dr Pranjali Shah",domain:"Life & career",question:"How do I build a great medical career without sacrificing my life?"},
 ];
-
+ 
 const TOTAL_SEATS = 3;
 const taken     = MENTORS.map(()=>0);
 const waitlists = MENTORS.map(()=>0);
-
+ 
 const registeredSet = new Set();
 let pendingIdx = null;
 let modalMode  = 'reserve';
-
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwxM09ychbNaoCcRkKp8zX0mzcUfrwcxJSHrliEHnOO2qjxlpJ9Z8U2kQ1Tuxj9o6c/exec';
-
+ 
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz2x8l8stKMQ7UPQPZSi1SuVP4cdYV9jHnenky4ZYmXq9_-lj8OgVc3xaXr2Pg6Wck/exec';
+ 
 function applyLiveCounts(data) {
   MENTORS.forEach((m, i) => {
     taken[i]     = (data.reserved  && data.reserved[m.name])  || 0;
     waitlists[i] = (data.waitlists && data.waitlists[m.name]) || 0;
   });
 }
-
+ 
 function fetchLiveCounts() {
   return new Promise((resolve) => {
     const cbName = 'jsonp_' + Date.now();
@@ -801,7 +801,7 @@ function fetchLiveCounts() {
     document.body.appendChild(script);
   });
 }
-
+ 
 async function loadLiveCounts() {
   document.getElementById('urgencyText').textContent = 'Loading availability…';
   document.getElementById('mentorGrid').style.opacity = '0';
@@ -812,17 +812,17 @@ async function loadLiveCounts() {
   document.getElementById('mentorGrid').style.opacity = '1';
   document.getElementById('mentorGrid').style.pointerEvents = '';
 }
-
+ 
 const AVATAR_COLORS = [
   '#1A5C56','#2E7A73','#0D3B38','#1B6B5E',
   '#245E58','#1A4E49','#2A6B65','#0F4440',
   '#1C6460','#235C58','#175449','#0E3C3A'
 ];
-
+ 
 function initials(name){
   return name.replace('Dr ','').trim().split(' ').slice(0,2).map(w=>w[0]).join('');
 }
-
+ 
 // Chair SVG
 function chairSVG(state){
   const col = state==='taken' ? '#C9A24A' : 'rgba(201,162,74,0.22)';
@@ -836,7 +836,7 @@ function chairSVG(state){
     <rect x="22" y="2" width="3" height="16" rx="1.5" fill="${col}" stroke="${stroke}" stroke-width="1"/>
   </svg>`;
 }
-
+ 
 function renderGrid(){
   const grid = document.getElementById('mentorGrid');
   grid.innerHTML = '';
@@ -846,16 +846,16 @@ function renderGrid(){
     const isFull   = left <= 0;
     const isReg    = registeredSet.has(i);
     const wlCount  = waitlists[i]; // now an integer from API
-
+ 
     const card = document.createElement('div');
     card.className = 'mentor-card' + (isFull?' full':'') + (isReg&&!isFull?' selected':'');
-
+ 
     // chairs: show all 3, filled = taken
     let chairsHTML = '';
     for(let c=0;c<TOTAL_SEATS;c++){
       chairsHTML += chairSVG(c < t ? 'taken' : 'empty');
     }
-
+ 
     // status line: "3/3 taken · 5 on waitlist" or "1/3 taken · 2 seats left"
     const takenFrac = `${t}/${TOTAL_SEATS} taken`;
     let statusRight, statusClass;
@@ -869,7 +869,7 @@ function renderGrid(){
       statusRight = `· ${left} seats left`;
       statusClass = 'available';
     }
-
+ 
     let btnHTML;
     if(isFull){
       btnHTML = `<button class="card-btn waitlist">Join waitlist${wlCount > 0 ? ' · '+wlCount+' waiting' : ''}</button>`;
@@ -878,7 +878,7 @@ function renderGrid(){
     } else {
       btnHTML = `<button class="card-btn reserve">Reserve a seat</button>`;
     }
-
+ 
     card.innerHTML = `
       <div class="card-domain-bar">
         <span class="card-domain">${m.domain}</span>
@@ -899,7 +899,7 @@ function renderGrid(){
       <div class="card-action">${btnHTML}</div>
       <div class="selected-badge">✓</div>
     `;
-
+ 
     const btn = card.querySelector('.card-btn');
     if(btn){
       btn.addEventListener('click', e=>{
@@ -917,7 +917,7 @@ function renderGrid(){
   updateUrgency();
   updateSticky();
 }
-
+ 
 function updateUrgency(){
   const avail = MENTORS.filter((_,i)=>(TOTAL_SEATS-taken[i])>0).length;
   const totalLeft = MENTORS.reduce((a,_,i)=>a+(TOTAL_SEATS-taken[i]),0);
@@ -926,7 +926,7 @@ function updateUrgency(){
   if(totalWL>0) txt += ' · '+totalWL+' on waitlists';
   document.getElementById('urgencyText').textContent = txt;
 }
-
+ 
 function updateSticky(){
   const bar = document.getElementById('stickyBar');
   const count = registeredSet.size;
@@ -939,16 +939,16 @@ function updateSticky(){
     bar.classList.remove('active');
   }
 }
-
+ 
 // Modal
 function openModal(idx, mode){
   modalMode = mode;
   pendingIdx = idx;
   const m = MENTORS[idx];
-
+ 
   document.getElementById('mName').textContent = m.name;
   document.getElementById('mQ').textContent = '"'+m.question+'"';
-
+ 
   if(mode==='waitlist'){
     document.getElementById('modalTitle').textContent = 'Join the waitlist';
     document.getElementById('modalSubtitle').innerHTML = m.domain+' <span class="waitlist-badge">Session full</span>';
@@ -962,7 +962,7 @@ function openModal(idx, mode){
   document.getElementById('regOverlay').classList.add('active');
   setTimeout(()=>document.getElementById('iName').focus(),100);
 }
-
+ 
 document.getElementById('modalClose').onclick = ()=>{
   document.getElementById('regOverlay').classList.remove('active');
 };
@@ -970,9 +970,9 @@ document.getElementById('regOverlay').addEventListener('click', e=>{
   if(e.target===document.getElementById('regOverlay'))
     document.getElementById('regOverlay').classList.remove('active');
 });
-
+ 
 document.getElementById('stickyBtn').onclick = ()=>{};
-
+ 
 function clearFields(){
   ['name','phone','spec'].forEach(f=>{
     const el = document.getElementById('f-'+f);
@@ -981,7 +981,7 @@ function clearFields(){
     if(inp) inp.value='';
   });
 }
-
+ 
 ['iName','iPhone','iSpec'].forEach(id=>{
   const el = document.getElementById(id);
   if(el) el.addEventListener('input',function(){
@@ -989,9 +989,9 @@ function clearFields(){
     if(field) field.classList.remove('err');
   });
 });
-
+ 
 // ── REGISTRATION SUBMIT ───────────────────────────────────────────
-
+ 
 async function sendToWeb3Forms(payload) {
   const params = new URLSearchParams({
     type:             payload.type,
@@ -1002,17 +1002,28 @@ async function sendToWeb3Forms(payload) {
     domain:           payload.domain,
     waitlistPosition: payload.waitlistPosition || ''
   });
-  await fetch(APPS_SCRIPT_URL + '?' + params.toString(), {
-    method: 'GET',
-    mode: 'no-cors'
+  // Use JSONP — writes to Sheet AND returns updated counts in one call
+  const cbName = 'jsonp_w_' + Date.now();
+  return new Promise((resolve) => {
+    const script = document.createElement('script');
+    let done = false;
+    window[cbName] = (data) => {
+      done = true;
+      delete window[cbName];
+      if(script.parentNode) script.parentNode.removeChild(script);
+      if(data && data.status === 'success') applyLiveCounts(data);
+      resolve({ success: true, message: '' });
+    };
+    script.onerror = () => {
+      if(!done){ delete window[cbName]; if(script.parentNode) script.parentNode.removeChild(script); resolve({ success: true, message: '' }); }
+    };
+    setTimeout(()=>{ if(!done){ delete window[cbName]; if(script.parentNode) script.parentNode.removeChild(script); resolve({ success: true, message: '' }); } }, 10000);
+    script.src = APPS_SCRIPT_URL + '?' + params.toString() + '&callback=' + cbName + '&t=' + Date.now();
+    document.body.appendChild(script);
   });
-  // After write, re-fetch live counts via JSONP
-  const data = await fetchLiveCounts();
-  if(data && data.status === 'success') applyLiveCounts(data);
-  return { success: true, message: '' };
 }
 // ─────────────────────────────────────────────────────────────────
-
+ 
 document.getElementById('modalSubmit').onclick = async ()=>{
   const name = document.getElementById('iName').value.trim();
   const phone = document.getElementById('iPhone').value.trim();
@@ -1025,15 +1036,15 @@ document.getElementById('modalSubmit').onclick = async ()=>{
   if(!spec){document.getElementById('f-spec').classList.add('err');valid=false}
   else document.getElementById('f-spec').classList.remove('err');
   if(!valid) return;
-
+ 
   const m = MENTORS[pendingIdx];
   const btn = document.getElementById('modalSubmit');
   btn.textContent = 'Submitting…';
   btn.disabled = true;
-
+ 
   const isWaitlist = modalMode === 'waitlist';
   const wlPos = isWaitlist ? (waitlists[pendingIdx] + 1) : '';
-
+ 
   try {
     const result = await sendToWeb3Forms({
       type: isWaitlist ? 'WAITLIST' : 'RESERVATION',
@@ -1050,10 +1061,10 @@ document.getElementById('modalSubmit').onclick = async ()=>{
     alert('Something went wrong. Please try again.\n\n' + err.message);
     return;
   }
-
+ 
   btn.textContent = isWaitlist ? 'Join waitlist →' : 'Confirm my seat →';
   btn.disabled = false;
-
+ 
   if(isWaitlist){
     waitlists[pendingIdx]++;
     const pos = waitlists[pendingIdx];
@@ -1092,11 +1103,11 @@ document.getElementById('modalSubmit').onclick = async ()=>{
   document.getElementById('successOverlay').classList.add('active');
   renderGrid();
 };
-
+ 
 function closeSuccess(){
   document.getElementById('successOverlay').classList.remove('active');
 }
-
+ 
 // Boot — load live counts then render
 loadLiveCounts();
 </script>
